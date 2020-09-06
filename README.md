@@ -1,19 +1,47 @@
-# Lab 07
-The starter code for lab 07.
+# Lab 08
+The starter code for lab 08.
 
 ## Overview
-For this lab, you will modify the previous lab to use Firestore Cloud as its data source.  The result will be that it could share the data between clients (if using the same account), and changes made by one client will be automatically visible to other clients.
+For this lab, you will develop a rudimentary social network, roughly modelled after _Hacker News_ (https://news.ycombinator.com/).  The app will display a sortable `DataTable` of stories with their up votes and down votes, as well as icon buttons allowing the user to increase the number of up/down votes.
+
+_**Note:**  The user will be able to press the up arrow or down arrow icon as many times as they like.  We're not keeping track of which users have voted already._
 
 ## Instructions
-The previous lab had you develop a model which uses SQLite, such that it was kept separated from the user interface.  This will make it somewhat easier for us to migrate to a cloud database.  
 
-### Changes to the Model
-The `Grade` class should remain mostly the same, but you will need to add a `DocumentReference` instance variable to it (called `reference`), and change the type of `id` to be `String` (since we will now be using the auto-generated-by-FireStore `DocumentID` as our `id`, which can be accessed via our new reference field).
+### The Post Class and Sample Data
+The Post class will consist of the following fields:
+- `title` (`String`)
+- `numUpVotes` (`int`)
+- `numDownVotes` (`int`)
 
-The `GradesModel` class needs to be heavily modified, since nearly all of the functionality will be different.  Most of the data functions with Firestore Cloud are very simple, often one line of code, so this class will get reduced in size significantly.  Now that `Grade` has a `DocumentReference` instance variable, making updates to the data store should be easy.
+This class will also have a static function (`generateData()`) which will return some (5-10) sample `Post`s.
 
-### Changes to the User Interface
-While it is normally desirable to make minimal changes to the user interface, in this case we need to since we want to support live updates when data is modified in our cloud store.  We'll accomplish this task by using a `StreamBuilder`.  `StreamBuilder` is a class which expects a stream of data, and re-builds the UI when the data has changed.  We've used this class in the in-class demo.  This `StreamBuilder` will now be used to build the `ListView` created in the previous lab.  The `GradesModel` methods can be used as the data source for this `StreamBuilder`, as well as the mechanisms for creating, updating, and deleting Grades from the data store.
+### Creating the DataTable
+The `DataTable` will consist of three columns:
+- `title` (not numeric)
+- `numUpVotes` (numeric)
+- `numDownVotes` (numeric)
+
+This `DataTable` will be similar to the in-class demo, but will not support selection or editing.  It will support sorting on all three columns, however.  The data for this table will be taken from the `generateData()` method on the `Post` class.
+
+The `title` column will merely display a simple `Text` widget.  The other two columns will generate both a `Text` widget (to display the current value), and an `IconButton` (to allow the user to change the value).  A screenshot of the desired table appearance, is shown below:
+
+![the data table](images/data_table.png)
+
+_Figure 1 - The DataTable_
+
+Please note the app bar at the top, which has a chart icon to take you to the chart page (described in the next section).
+
+### The Chart
+The widget containing the `DataTable` will pass its post data to this widget, as an argument.  This widget will generate a horizontal bar chart with two series:
+- up votes
+- down votes
+
+The post's title will be used as the domain for both series.  A screenshot of the desired chart is shown below:
+
+![the chart](images/chart.png)
+ 
+_Figure 2 - The bar chart_
 
 ## Getting Help
 If you run into difficulty, you may wish to check out some of the following resources:
