@@ -64,8 +64,8 @@ To extend this lab, you will need to modify both the DataTable page and the char
 
 - Modify the lab so that the data source is SQLite. The database will need to store the title and number of upvotes and downvotes for each post, and modify these values when changed. 
 
-- Add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes).
-
 - Add a Floating Action button to the DataTable page to enable users to add new posts. A new post will have 0 upVotes and 0 downVotes. Don't forget to add it to the database as well!
 
 - Modify the chart page to allow the user to switch between visualizing the data with a horizontal bar chart, a vertical stacked bar chart, or two pie charts (one for upvotes, one for downvotes).
+
+- Finally, add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes). Ensure this data is also added successfully to the database.
