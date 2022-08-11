@@ -70,4 +70,4 @@ To extend this lab, you will need to modify both the DataTable page and the char
 
 - Add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes). Ensure this data is also added successfully to the database.
 
-- Add one more feature of your choice other than those listed here.
+- Add one more feature of your choice other than those listed here. Mention this feature explicitly in your README.md.
