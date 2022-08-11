@@ -68,4 +68,6 @@ To extend this lab, you will need to modify both the DataTable page and the char
 
 - Modify the chart page to allow the user to switch between visualizing the data with a horizontal bar chart, a vertical stacked bar chart, or two pie charts (one for upvotes, one for downvotes).
 
-- Finally, add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes). Ensure this data is also added successfully to the database.
+- Add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes). Ensure this data is also added successfully to the database.
+
+- Add one more feature of your choice other than those listed here.
