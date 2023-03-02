@@ -70,4 +70,6 @@ To extend this lab, you will need to modify both the DataTable page and the char
 
 - Add an icon to the appBar to allow users to add a large number of new posts by importing a .csv file. The csv file should have 3 columns (title, numUpVotes, numDownVotes). Ensure this data is also added successfully to the database.
 
-- Add one more feature of your choice other than those listed here. Mention this feature explicitly in your README.md.
+- Add two more features of your choice other than those listed here. Mention these features explicitly in your README.md.
+
+  - As a baseline, these features should be at least as complex as being able to create a comment thread under any post, where the user can write and post comments which can also be voted on, but do not appear in the charts.
